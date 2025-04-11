@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from skuba_msgs/srv/ArmTrajectory.srv
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Duration.idl"
+
+module skuba_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request")
+    struct ArmTrajectory_Request {
+      sequence<float> positions;
+
+      sequence<float> velocities;
+
+      sequence<float> accelerations;
+
+      sequence<builtin_interfaces::msg::Duration> time_from_start;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct ArmTrajectory_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

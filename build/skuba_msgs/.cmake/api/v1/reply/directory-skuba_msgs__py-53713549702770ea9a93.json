@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "skuba_msgs__py",
+		"source" : "/home/napat/skuba-manipulation/build/skuba_msgs/skuba_msgs__py"
+	}
+}

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="cam" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <joint
+    name="camera_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.13 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="plate_top_link_2" />
+    <child
+      link="cam_dynamixel_link_1" />
+  </joint>
+  
+  <link
+    name="cam_dynamixel_link_1">
+    <inertial>
+      <origin
+        xyz="-0.0209450186936137 0.00143278429342602 0.0727339511027757"
+        rpy="0 0 0" />
+      <mass
+        value="0.040997410879004" />
+      <inertia
+        ixx="8.63986146690134E-06"
+        ixy="9.75250854465278E-14"
+        ixz="-9.8832545664673E-12"
+        iyy="9.87033431386498E-06"
+        iyz="-3.27236953918102E-08"
+        izz="3.4913160801883E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.059583 -0.020945 0.0219"
+        rpy="0 0 -1.5708" />
+      <geometry>
+        <mesh
+          filename="package://skuba_edu_description/meshes/camera/cam_dynamixel_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skuba_edu_description/meshes/camera/cam_dynamixel_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="cam_dynamixel_link_2">
+    <inertial>
+      <origin
+        xyz="-0.000412354574854269 0.0267899848217597 -4.87306044821834E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0454003908930156" />
+      <inertia
+        ixx="1.01180588287583E-05"
+        ixy="-3.2723694677519E-08"
+        ixz="-9.75026536843879E-14"
+        iyy="4.48932021955109E-06"
+        iyz="9.88323176699809E-12"
+        izz="9.42773974543683E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skuba_edu_description/meshes/camera/cam_dynamixel_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skuba_edu_description/meshes/camera/cam_dynamixel_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cam_dynamixel_joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.042"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="cam_dynamixel_link_1" />
+    <child
+      link="cam_dynamixel_link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="cam_dynamixel_link_3">
+    <inertial>
+      <origin
+        xyz="-0.0021940234623884 -0.0294641789141052 -1.25593979660721E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0154330037241054" />
+      <inertia
+        ixx="6.05749082974195E-06"
+        ixy="-7.06412243120286E-21"
+        ixz="9.52912065661088E-22"
+        iyy="6.33951920142958E-06"
+        iyz="-5.55865371635635E-22"
+        izz="1.04483840689536E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skuba_edu_description/meshes/camera/cam_dynamixel_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skuba_edu_description/meshes/camera/cam_dynamixel_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cam_dynamixel_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.0425 0"
+      rpy="-3.1022 0 0" />
+    <parent
+      link="cam_dynamixel_link_2" />
+    <child
+      link="cam_dynamixel_link_3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

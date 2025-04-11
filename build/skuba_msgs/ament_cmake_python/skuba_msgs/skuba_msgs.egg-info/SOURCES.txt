@@ -1,0 +1,6 @@
+setup.py
+skuba_msgs/__init__.py
+skuba_msgs.egg-info/PKG-INFO
+skuba_msgs.egg-info/SOURCES.txt
+skuba_msgs.egg-info/dependency_links.txt
+skuba_msgs.egg-info/top_level.txt

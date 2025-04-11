@@ -1,0 +1,76 @@
+[0.019s] Invoking command in '/home/napat/skuba-manipulation/build/skuba_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/napat/skuba_ws/install/cleaner_navigation:/opt/ros/humble /usr/bin/cmake --build /home/napat/skuba-manipulation/build/skuba_msgs -- -j12 -l12
+[0.102s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[0.134s] [  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[0.160s] [  3%] Built target ament_cmake_python_copy_skuba_msgs
+[0.585s] running egg_info
+[0.585s] creating skuba_msgs.egg-info
+[0.587s] writing manifest file 'skuba_msgs.egg-info/SOURCES.txt'
+[0.589s] writing manifest file 'skuba_msgs.egg-info/SOURCES.txt'
+[0.623s] [  3%] Built target ament_cmake_python_build_skuba_msgs_egg
+[0.959s] [  3%] Built target skuba_msgs__cpp
+[1.025s] [  5%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.033s] [  7%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.036s] [  9%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.093s] [ 10%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_c.dir/rosidl_generator_c/skuba_msgs/msg/detail/arm_state__functions.c.o[0m
+[1.095s] [ 12%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_c.dir/rosidl_generator_c/skuba_msgs/srv/detail/ik_request__functions.c.o[0m
+[1.097s] [ 14%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_c.dir/rosidl_generator_c/skuba_msgs/srv/detail/arm_trajectory__functions.c.o[0m
+[1.101s] [ 16%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_c.dir/rosidl_generator_c/skuba_msgs/srv/detail/arm_command__functions.c.o[0m
+[1.232s] [ 18%] [32m[1mLinking C shared library libskuba_msgs__rosidl_generator_c.so[0m
+[1.288s] [ 18%] Built target skuba_msgs__rosidl_generator_c
+[1.319s] [ 20%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.321s] [ 21%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.321s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.916s] [ 25%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/skuba_msgs/msg/detail/arm_state__type_support.cpp.o[0m
+[1.917s] [ 27%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/skuba_msgs/srv/detail/arm_command__type_support.cpp.o[0m
+[1.922s] [ 29%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/skuba_msgs/srv/detail/arm_trajectory__type_support.cpp.o[0m
+[1.931s] [ 30%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/skuba_msgs/srv/detail/ik_request__type_support.cpp.o[0m
+[1.935s] [ 32%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/skuba_msgs/srv/arm_command__type_support.cpp.o[0m
+[1.935s] [ 34%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/skuba_msgs/srv/ik_request__type_support.cpp.o[0m
+[1.938s] [ 36%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/skuba_msgs/msg/arm_state__type_support.cpp.o[0m
+[1.938s] [ 38%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/skuba_msgs/srv/arm_trajectory__type_support.cpp.o[0m
+[2.314s] [ 40%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/skuba_msgs/msg/detail/dds_fastrtps/arm_state__type_support.cpp.o[0m
+[2.496s] [ 41%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/skuba_msgs/msg/arm_state__type_support.cpp.o[0m
+[2.665s] [ 43%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/skuba_msgs/srv/arm_command__type_support.cpp.o[0m
+[2.692s] [ 45%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/skuba_msgs/srv/arm_trajectory__type_support.cpp.o[0m
+[2.732s] [ 47%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/skuba_msgs/srv/detail/dds_fastrtps/arm_command__type_support.cpp.o[0m
+[2.750s] [ 49%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/skuba_msgs/srv/detail/dds_fastrtps/arm_trajectory__type_support.cpp.o[0m
+[2.751s] [ 50%] [32m[1mLinking CXX shared library libskuba_msgs__rosidl_typesupport_cpp.so[0m
+[2.825s] [ 52%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/skuba_msgs/srv/ik_request__type_support.cpp.o[0m
+[2.845s] [ 54%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/skuba_msgs/srv/detail/dds_fastrtps/ik_request__type_support.cpp.o[0m
+[2.897s] [ 56%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/skuba_msgs/msg/detail/arm_state__type_support.c.o[0m
+[2.926s] [ 58%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/skuba_msgs/msg/detail/arm_state__type_support_c.cpp.o[0m
+[2.951s] [ 58%] Built target skuba_msgs__rosidl_typesupport_cpp
+[2.955s] [ 60%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/skuba_msgs/srv/detail/arm_command__type_support.c.o[0m
+[2.983s] [ 61%] [32m[1mLinking CXX shared library libskuba_msgs__rosidl_typesupport_c.so[0m
+[3.003s] [ 63%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/skuba_msgs/srv/detail/arm_trajectory__type_support.c.o[0m
+[3.015s] [ 65%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/skuba_msgs/srv/detail/arm_command__type_support_c.cpp.o[0m
+[3.044s] [ 67%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/skuba_msgs/srv/detail/arm_trajectory__type_support_c.cpp.o[0m
+[3.074s] [ 69%] [32mBuilding CXX object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/skuba_msgs/srv/detail/ik_request__type_support_c.cpp.o[0m
+[3.180s] [ 70%] [32m[1mLinking CXX shared library libskuba_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[3.189s] [ 72%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/skuba_msgs/srv/detail/ik_request__type_support.c.o[0m
+[3.248s] [ 72%] Built target skuba_msgs__rosidl_typesupport_c
+[3.371s] [ 74%] [32m[1mLinking C shared library libskuba_msgs__rosidl_typesupport_introspection_c.so[0m
+[3.517s] [ 74%] Built target skuba_msgs__rosidl_typesupport_introspection_cpp
+[3.554s] [ 74%] Built target skuba_msgs__rosidl_typesupport_introspection_c
+[4.002s] [ 78%] [32m[1mLinking CXX shared library libskuba_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.002s] [ 78%] [32m[1mLinking CXX shared library libskuba_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[4.336s] [ 78%] Built target skuba_msgs__rosidl_typesupport_fastrtps_c
+[4.342s] [ 78%] Built target skuba_msgs__rosidl_typesupport_fastrtps_cpp
+[4.466s] [ 78%] Built target skuba_msgs
+[4.556s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[5.818s] [ 80%] Built target skuba_msgs__py
+[5.936s] [ 81%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_py.dir/rosidl_generator_py/skuba_msgs/srv/_arm_command_s.c.o[0m
+[5.944s] [ 83%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_py.dir/rosidl_generator_py/skuba_msgs/msg/_arm_state_s.c.o[0m
+[5.951s] [ 85%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_py.dir/rosidl_generator_py/skuba_msgs/srv/_arm_trajectory_s.c.o[0m
+[5.958s] [ 87%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_generator_py.dir/rosidl_generator_py/skuba_msgs/srv/_ik_request_s.c.o[0m
+[6.303s] [ 89%] [32m[1mLinking C shared library rosidl_generator_py/skuba_msgs/libskuba_msgs__rosidl_generator_py.so[0m
+[6.446s] [ 89%] Built target skuba_msgs__rosidl_generator_py
+[6.593s] [ 90%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/skuba_msgs/_skuba_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[6.602s] [ 92%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/skuba_msgs/_skuba_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[6.611s] [ 94%] [32mBuilding C object CMakeFiles/skuba_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/skuba_msgs/_skuba_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[6.930s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/skuba_msgs/skuba_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.936s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/skuba_msgs/skuba_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.954s] [100%] [32m[1mLinking C shared library rosidl_generator_py/skuba_msgs/skuba_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.007s] [100%] Built target skuba_msgs__rosidl_typesupport_fastrtps_c__pyext
+[7.013s] [100%] Built target skuba_msgs__rosidl_typesupport_introspection_c__pyext
+[7.039s] [100%] Built target skuba_msgs__rosidl_typesupport_c__pyext

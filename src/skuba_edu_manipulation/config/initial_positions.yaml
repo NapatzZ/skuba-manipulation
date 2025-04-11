@@ -1,0 +1,8 @@
+# Default initial positions for arm's ros2_control fake system
+
+initial_positions:
+  arm_base_link_link_1: 0
+  arm_link_1_arm_link_2: 0
+  arm_link_2_arm_link_3: 0
+  arm_link_3_gripper_left: 0
+  arm_link_3_gripper_right: 0

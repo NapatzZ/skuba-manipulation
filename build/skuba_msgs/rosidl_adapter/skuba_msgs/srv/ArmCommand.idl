@@ -1,0 +1,37 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from skuba_msgs/srv/ArmCommand.srv
+// generated code does not contain a copyright notice
+
+
+module skuba_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Command type")
+    struct ArmCommand_Request {
+      @verbatim (language="comment", text=
+        "\"position\", \"velocity\", \"home\", \"stop\"")
+      string command_type;
+
+      @verbatim (language="comment", text=
+        "Target positions for each joint (in radians)")
+      sequence<float> positions;
+
+      @verbatim (language="comment", text=
+        "Target velocities for each joint (in radians/second)")
+      sequence<float> velocities;
+
+      @verbatim (language="comment", text=
+        "Gripper commands")
+      float gripper_left_position;
+
+      float gripper_right_position;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct ArmCommand_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

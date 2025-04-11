@@ -1,0 +1,31 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: skuba_edu_description
+    relative_path: urdf/arm/arm_moveit.urdf.xacro
+  srdf:
+    relative_path: config/arm.srdf
+  package_settings:
+    author_name: napat
+    author_email: napat@siric.ku.th
+    generated_timestamp: 1744294436
+  control_xacro:
+    command:
+      - position
+      - velocity
+      - effort
+    state:
+      - position
+      - velocity
+      - effort
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+      - velocity
+      - effort
+    state:
+      - position
+      - velocity
+      - effort

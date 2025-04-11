@@ -1,0 +1,13 @@
+# Command type
+string command_type  # "position", "velocity", "home", "stop"
+
+# Target positions for each joint (in radians)
+float32[] positions
+
+# Target velocities for each joint (in radians/second)
+float32[] velocities
+
+# Gripper commands
+float32 gripper_left_position
+float32 gripper_right_position
+

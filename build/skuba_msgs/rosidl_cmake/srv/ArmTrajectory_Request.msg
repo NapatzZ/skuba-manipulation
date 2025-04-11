@@ -1,0 +1,6 @@
+# Request
+float32[] positions
+float32[] velocities
+float32[] accelerations
+builtin_interfaces/Duration[] time_from_start
+

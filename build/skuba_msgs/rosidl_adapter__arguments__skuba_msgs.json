@@ -1,0 +1,9 @@
+{
+  "package_name": "skuba_msgs",
+  "non_idl_tuples": [
+    "/home/napat/skuba-manipulation/src/skuba_msgs:msg/ArmState.msg",
+    "/home/napat/skuba-manipulation/src/skuba_msgs:srv/ArmCommand.srv",
+    "/home/napat/skuba-manipulation/src/skuba_msgs:srv/ArmTrajectory.srv",
+    "/home/napat/skuba-manipulation/src/skuba_msgs:srv/IKRequest.srv"
+  ]
+}
