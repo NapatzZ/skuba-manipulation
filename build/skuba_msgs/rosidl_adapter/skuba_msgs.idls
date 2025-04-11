@@ -1,4 +1,0 @@
-/home/napat/skuba-manipulation/build/skuba_msgs/rosidl_adapter/skuba_msgs:msg/ArmState.idl
-/home/napat/skuba-manipulation/build/skuba_msgs/rosidl_adapter/skuba_msgs:srv/ArmCommand.idl
-/home/napat/skuba-manipulation/build/skuba_msgs/rosidl_adapter/skuba_msgs:srv/ArmTrajectory.idl
-/home/napat/skuba-manipulation/build/skuba_msgs/rosidl_adapter/skuba_msgs:srv/IKRequest.idl

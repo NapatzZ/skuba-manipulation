@@ -10,6 +10,7 @@
         "/home/napat/skuba_ws/install/cleaner_msgs/include/**",
         "/opt/ros/humble/include/**",
         "/home/napat/skuba-manipulation/src/skuba_arm/include/**",
+        "/home/napat/skuba-manipulation/src/skuba_arm_control/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",

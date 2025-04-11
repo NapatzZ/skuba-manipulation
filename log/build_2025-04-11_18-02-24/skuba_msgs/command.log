@@ -1,1 +1,0 @@
-Invoking command in '/home/napat/skuba-manipulation/build/skuba_msgs': BYOBU_DATE=%Y-%m-%d CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/napat/skuba_ws/install/cleaner_navigation:/opt/ros/humble /usr/bin/cmake /home/napat/skuba-manipulation/src/skuba_msgs -DCMAKE_INSTALL_PREFIX=/home/napat/skuba-manipulation/install/skuba_msgs

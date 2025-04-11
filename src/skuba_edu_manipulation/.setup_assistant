@@ -6,8 +6,8 @@ moveit_setup_assistant_config:
     relative_path: config/arm.srdf
   package_settings:
     author_name: napat
-    author_email: napat@siric.ku.th
-    generated_timestamp: 1744294436
+    author_email: napat@todo.todo
+    generated_timestamp: 1744372642
   control_xacro:
     command:
       - position

@@ -1,1 +1,0 @@
-Invoking command in '/home/napat/skuba-manipulation/build/skuba_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/napat/skuba_ws/install/cleaner_navigation:/opt/ros/humble /usr/bin/cmake --build /home/napat/skuba-manipulation/build/skuba_msgs -- -j12 -l12
