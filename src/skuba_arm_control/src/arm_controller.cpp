@@ -14,12 +14,16 @@
 
 #define PROTOCOL_VERSION 1.0
 #define BAUDRATE 1000000
-#define DEVICE_NAME "/dev/ttyUSB2"
+#define DEVICE_NAME "/dev/ttyUSB0"
+
+// Define broadcast ID as in dynamixelControl.cpp
+#define BROADCAST_ID 0xFE
 
 // MX series specific constants
 #define MX_RESOLUTION 4096
 #define MX_DEGREES_PER_TICK 0.0879  // 360/4096 degrees per tick
 #define MX_START_ANGLE 180.0  // เริ่มที่ 180 องศา
+#define HOME_POSITION 2048    // Home position (center position)
 
 // Conversion functions for MX series
 #define RADIANS_TO_MX_TICKS(radians) ((uint16_t)(((radians * 180.0 / M_PI) + MX_START_ANGLE) / MX_DEGREES_PER_TICK))
@@ -53,56 +57,56 @@ public:
     }
     RCLCPP_INFO(this->get_logger(), "Successfully set baudrate %d", BAUDRATE);
 
-    // Enable torque and set speed for all motors
-    for (int i = 0; i < 3; i++) {
-      // Enable torque
-      uint8_t dxl_error = 0;
-      int dxl_comm_result = packetHandler_->write1ByteTxRx(
-        portHandler_,
-        i,
-        ADDR_TORQUE_ENABLE,
-        1,
-        &dxl_error);
+    // Use broadcast ID to enable torque for all motors at once
+    uint8_t dxl_error = 0;
+    int dxl_comm_result = packetHandler_->write1ByteTxRx(
+      portHandler_,
+      BROADCAST_ID,
+      ADDR_TORQUE_ENABLE,
+      1,
+      &dxl_error);
 
-      if (dxl_comm_result != COMM_SUCCESS)
-      {
-        RCLCPP_ERROR(this->get_logger(), "Failed to enable torque for motor %d: %s", 
-          i, packetHandler_->getTxRxResult(dxl_comm_result));
-      }
-      else if (dxl_error != 0)
-      {
-        RCLCPP_ERROR(this->get_logger(), "Error enabling torque for motor %d: %s", 
-          i, packetHandler_->getRxPacketError(dxl_error));
-      }
-      else
-      {
-        RCLCPP_INFO(this->get_logger(), "Successfully enabled torque for motor %d", i);
-      }
-
-      // Set speed
-      dxl_error = 0;
-      dxl_comm_result = packetHandler_->write2ByteTxRx(
-        portHandler_,
-        i,
-        ADDR_SPEED_LIMIT,
-        10,
-        &dxl_error);
-
-      if (dxl_comm_result != COMM_SUCCESS)
-      {
-        RCLCPP_ERROR(this->get_logger(), "Failed to set speed for motor %d: %s", 
-          i, packetHandler_->getTxRxResult(dxl_comm_result));
-      }
-      else if (dxl_error != 0)
-      {
-        RCLCPP_ERROR(this->get_logger(), "Error setting speed for motor %d: %s", 
-          i, packetHandler_->getRxPacketError(dxl_error));
-      }
-      else
-      {
-        RCLCPP_INFO(this->get_logger(), "Successfully set speed for motor %d to 30", i);
-      }
+    if (dxl_comm_result != COMM_SUCCESS)
+    {
+      RCLCPP_ERROR(this->get_logger(), "Failed to enable torque for all motors: %s", 
+        packetHandler_->getTxRxResult(dxl_comm_result));
     }
+    else if (dxl_error != 0)
+    {
+      RCLCPP_ERROR(this->get_logger(), "Error enabling torque for all motors: %s", 
+        packetHandler_->getRxPacketError(dxl_error));
+    }
+    else
+    {
+      RCLCPP_INFO(this->get_logger(), "Successfully enabled torque for all motors");
+    }
+
+    // Use broadcast ID to set speed for all motors at once
+    dxl_error = 0;
+    dxl_comm_result = packetHandler_->write2ByteTxRx(
+      portHandler_,
+      BROADCAST_ID,
+      ADDR_SPEED_LIMIT,
+      30,
+      &dxl_error);
+
+    if (dxl_comm_result != COMM_SUCCESS)
+    {
+      RCLCPP_ERROR(this->get_logger(), "Failed to set speed for all motors: %s", 
+        packetHandler_->getTxRxResult(dxl_comm_result));
+    }
+    else if (dxl_error != 0)
+    {
+      RCLCPP_ERROR(this->get_logger(), "Error setting speed for all motors: %s", 
+        packetHandler_->getRxPacketError(dxl_error));
+    }
+    else
+    {
+      RCLCPP_INFO(this->get_logger(), "Successfully set speed for all motors to 30");
+    }
+
+    // Move motors 0-2 to home position (2048)
+    moveToHomePosition();
 
     // Create subscriber for planned trajectory
     trajectory_sub_ = this->create_subscription<moveit_msgs::msg::DisplayTrajectory>(
@@ -114,22 +118,55 @@ public:
 
   ~ArmController()
   {
-    // Disable torque for all motors
-    for (int i = 0; i < 3; i++) {
-      uint8_t dxl_error = 0;
-      packetHandler_->write1ByteTxRx(
-        portHandler_,
-        i,
-        ADDR_TORQUE_ENABLE,
-        0,
-        &dxl_error);
-    }
+    // Disable torque for all motors using broadcast ID
+    uint8_t dxl_error = 0;
+    packetHandler_->write1ByteTxRx(
+      portHandler_,
+      BROADCAST_ID,
+      ADDR_TORQUE_ENABLE,
+      0,
+      &dxl_error);
     
     // Close port
     portHandler_->closePort();
   }
 
 private:
+  // Method to move motors 0-2 to home position
+  void moveToHomePosition()
+  {
+    RCLCPP_INFO(this->get_logger(), "Moving all motors to home position (2048)");
+    
+    for (int i = 0; i < 3; i++) {
+      uint8_t dxl_error = 0;
+      int dxl_comm_result = packetHandler_->write2ByteTxRx(
+        portHandler_,
+        i,
+        ADDR_GOAL_POSITION,
+        HOME_POSITION,
+        &dxl_error);
+      
+      if (dxl_comm_result != COMM_SUCCESS)
+      {
+        RCLCPP_ERROR(this->get_logger(), "Failed to move motor %d to home position: %s", 
+          i, packetHandler_->getTxRxResult(dxl_comm_result));
+      }
+      else if (dxl_error != 0)
+      {
+        RCLCPP_ERROR(this->get_logger(), "Error moving motor %d to home position: %s", 
+          i, packetHandler_->getRxPacketError(dxl_error));
+      }
+      else
+      {
+        RCLCPP_INFO(this->get_logger(), "Successfully moved motor %d to home position", i);
+      }
+    }
+    
+    // Give motors time to reach position
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    RCLCPP_INFO(this->get_logger(), "Home position movement completed");
+  }
+
   void trajectoryCallback(const moveit_msgs::msg::DisplayTrajectory::SharedPtr msg)
   {
     if (msg->trajectory.empty())
@@ -145,6 +182,7 @@ private:
     for (const auto& point : joint_trajectory.points)
     {
       // Move each joint to its target position
+      // Note: We can't use broadcast ID here as each motor needs its own position
       for (size_t i = 0; i < point.positions.size(); ++i)
       {
         // Convert position to Dynamixel MX value
@@ -165,7 +203,7 @@ private:
         uint8_t dxl_error = 0;
         int dxl_comm_result = packetHandler_->write2ByteTxRx(
           portHandler_,
-          i,  // Dynamixel ID (0-2)
+          i, 
           ADDR_GOAL_POSITION,
           goal_position,
           &dxl_error);
@@ -195,9 +233,9 @@ private:
         }
       }
 
-      // Wait for the specified time
-      rclcpp::sleep_for(std::chrono::nanoseconds(
-        static_cast<int64_t>(point.time_from_start.sec * 1e9 + point.time_from_start.nanosec)));
+      // Wait time commented out as in your provided code
+      // rclcpp::sleep_for(std::chrono::nanoseconds(
+      //   static_cast<int64_t>(point.time_from_start.sec * 1e9 + point.time_from_start.nanosec)));
     }
   }
 
@@ -213,4 +251,4 @@ int main(int argc, char** argv)
   rclcpp::spin(node);
   rclcpp::shutdown();
   return 0;
-} 
+}
